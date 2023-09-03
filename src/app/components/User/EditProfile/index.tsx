@@ -18,7 +18,7 @@ const schema = z.object({
 });
 
 // プロフィール
-const Profile = () => {
+const EditProfile = () => {
   const router = useRouter();
   const supabase = createClientComponentClient<Database>();
   const [loading, setLoading] = useState(false);
@@ -205,4 +205,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default EditProfile;

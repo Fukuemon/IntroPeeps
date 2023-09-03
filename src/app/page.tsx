@@ -1,6 +1,8 @@
 import { cookies } from "next/headers";
 import type { Database } from "../../utils/database.types";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
+import { Suspense } from "react";
+import UserList from "./components/User/List";
 //メインページ
 const Home = async () => {
   //cookiesを取得したsupabaseクライアントを作成
@@ -13,7 +15,13 @@ const Home = async () => {
     data: { session },
   } = await supabase.auth.getSession();
 
-  return <div>{session ? <div>ログイン済み</div> : <div>未ログイン</div>}</div>;
+  return (
+    <div>
+      <Suspense fallback={<div>loading...</div>}>
+        <UserList />
+      </Suspense>
+    </div>
+  );
 };
 
 export default Home;

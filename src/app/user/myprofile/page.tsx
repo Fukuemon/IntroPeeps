@@ -3,7 +3,7 @@ import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { redirect } from "next/navigation";
 
 import type { Database } from "../../../../utils/database.types";
-import Profile from "@/app/components/User/Profile";
+import EditProfile from "@/app/components/User/EditProfile";
 
 const MyProfilePage = async () => {
   const supabase = createServerComponentClient<Database>({
@@ -20,7 +20,7 @@ const MyProfilePage = async () => {
     redirect("/auth/login");
   }
 
-  return <Profile />;
+  return <EditProfile />;
 };
 
 export default MyProfilePage;
