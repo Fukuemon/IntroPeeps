@@ -2,14 +2,10 @@
 const nextConfig = {
   experimental: {
     appDir: true,
+    serverActions: true,
   },
-  // row-loader
-  webpack: function (config) {
-    config.module.rules.push({
-      test: /\.md$/,
-      use: "raw-loader",
-    });
-    return config;
+  images: {
+    domains: ["snarbiqytzhytcegvkvh.supabase.co"],
   },
 };
 
