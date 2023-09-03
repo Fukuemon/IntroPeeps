@@ -20,7 +20,12 @@ const MyProfilePage = async () => {
     redirect("/auth/login");
   }
 
-  return <EditProfile />;
+  return (
+    <div className="mx-8">
+      {" "}
+      <EditProfile />
+    </div>
+  );
 };
 
 export default MyProfilePage;

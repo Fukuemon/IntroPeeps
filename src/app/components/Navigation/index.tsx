@@ -28,8 +28,8 @@ const Navigation = ({
   }, [session, profile, setUser]);
   return (
     <header className="text-primary">
-      <nav className="p-5 bg-main shadow md:flex md:items-center md:justify-between">
-        <div className="flex justify-between items-center">
+      <nav className="py-5 bg-main shadow md:flex md:items-center md:justify-between">
+        <div className="px-4 flex justify-between items-center">
           <Link href="/" className=" font-burtons text-xl cursor-pointer">
             Profile List
           </Link>

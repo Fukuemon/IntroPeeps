@@ -37,9 +37,7 @@ export default function RootLayout({
       <body className="text-primary font-source-code-pro bg-back">
         <div className="flex flex-col min-h-screen">
           <SupabaseListener />
-          <main className="text-text flex-1 max-w-4xl w-full mx-auto px-8 py-8">
-            {children}
-          </main>
+          <main className="text-text  w-full mx-auto py-8">{children}</main>
           <Footer />
         </div>
       </body>

@@ -13,8 +13,8 @@ type Props = {
 const UserItem: FC<Props> = (user) => {
   return (
     <div className="px-8 py-8">
-      <div className=" text-xl  font-burtons text-center p-10 ">
-        <div className="relative bg-gradient-to-b from-yellow-500 rounded-full w-80 h-80 mx-auto ">
+      <div className=" text-xl  font-burtons text-center py-5 ">
+        <div className="container px-8 flex items-center justify-center relative bg-gradient-to-b from-yellow-500 rounded-full w-80 h-80 mx-auto ">
           <Image
             src={user.avatar_url}
             alt="avatar"
