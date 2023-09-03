@@ -38,7 +38,9 @@ export default function RootLayout({
         <div className="flex flex-col min-h-screen">
           {/* @ts-expect-error next version of TS will fix this */}
           <SupabaseListener />
-          <main className="flex-1 max-w-4xl w-full mx-auto">{children}</main>
+          <main className="text-text flex-1 max-w-4xl w-full mx-auto px-8 py-8">
+            {children}
+          </main>
           <Footer />
         </div>
       </body>

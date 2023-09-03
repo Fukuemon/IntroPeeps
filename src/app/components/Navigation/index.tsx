@@ -27,25 +27,26 @@ const Navigation = ({
     });
   }, [session, profile, setUser]);
   return (
-    <header className="border-b py-5 text-primary">
-      <div className="container max-w-screen-xl mx-auto relative flex justify-center items-center ">
-        <Link href="/" className="font-bold text-xl cursor-pointer">
-          Blog
-        </Link>
-
-        <div className="absolute right-5">
-          {session ? (
-            <div className="flex space-x-4">
-              <Link href="/user/myprofile">プロフィール</Link>
-            </div>
-          ) : (
-            <div>
-              <Link href="/auth/login">ログイン</Link>
-              <Link href="/auth/signup">サインアップ</Link>
-            </div>
-          )}
+    <header className="text-primary">
+      <nav className="p-5 bg-main shadow md:flex md:items-center md:justify-between">
+        <div className="flex justify-between items-center">
+          <Link href="/" className=" font-burtons text-xl cursor-pointer">
+            Profile List
+          </Link>
+          <div className="absolute right-5">
+            {session ? (
+              <div className="flex space-x-4">
+                <Link href="/user/myprofile">プロフィール</Link>
+              </div>
+            ) : (
+              <div>
+                <Link href="/auth/login">ログイン</Link>
+                <Link href="/auth/signup">サインアップ</Link>
+              </div>
+            )}
+          </div>
         </div>
-      </div>
+      </nav>
     </header>
   );
 };
