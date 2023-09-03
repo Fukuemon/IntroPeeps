@@ -39,7 +39,7 @@ const Navigation = ({
                 <Link href="/user/myprofile">プロフィール</Link>
               </div>
             ) : (
-              <div>
+              <div className="space-x-4">
                 <Link href="/auth/login">ログイン</Link>
                 <Link href="/auth/signup">サインアップ</Link>
               </div>

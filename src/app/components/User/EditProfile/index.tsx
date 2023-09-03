@@ -3,7 +3,7 @@ import { useCallback, useState, useEffect } from "react";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { useRouter } from "next/navigation";
 import { v4 as uuidv4 } from "uuid";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm, SubmitHandler, set } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
 import Loading from "@/app/loading";
@@ -27,6 +27,14 @@ const EditProfile = () => {
   const [fileMessage, setFileMessage] = useState("");
   const [avatarUrl, setAvatarUrl] = useState("/default.png");
   const { user } = useStore();
+
+  const logout = async () => {
+    setLoading(true);
+    await supabase.auth.signOut();
+    router.push("/");
+    router.refresh();
+    setLoading(false);
+  };
 
   const {
     register,
@@ -196,6 +204,16 @@ const EditProfile = () => {
           )}
         </div>
       </form>
+
+      {/* ログアウトボタン */}
+      <div className="mb-5">
+        <button
+          className="bg-main p-3 rounded-full flex justify-end"
+          onClick={logout}
+        >
+          ログアウト
+        </button>
+      </div>
 
       {/* メッセージ */}
       {message && (
