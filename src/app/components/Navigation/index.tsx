@@ -18,7 +18,6 @@ const Navigation = ({ session }: { session: Session | null }) => {
             </div>
           ) : (
             <div>
-              {" "}
               <Link href="/auth/login">ログイン</Link>
               <Link href="/auth/signup">サインアップ</Link>
             </div>
