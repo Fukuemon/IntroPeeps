@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Source_Code_Pro } from "next/font/google";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
+import SupabaseListener from "./components/Auth/SupabaseListener";
 
 const source_code_pro = Source_Code_Pro({
   // 後ほどTailwindCSSで指定する変数名を指定する
@@ -30,7 +31,8 @@ export default function RootLayout({
     <html lang="en">
       <body className="text-primary font-source-code-pro bg-back">
         <div className="flex flex-col min-h-screen">
-          <Navigation />
+          {/* @ts-expect-error next version of TS will fix this */}
+          <SupabaseListener />
           <main className="flex-1 max-w-4xl w-full mx-auto">{children}</main>
           <Footer />
         </div>
